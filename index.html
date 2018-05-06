@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<body>
+<!--<input type="file" id="f"/>-->
+<!--<br/>-->
+<!--<input type="button" value="up" id="up"/>-->
+<!--<br/>-->
+<!--&lt;!&ndash;进度条标签&ndash;&gt;-->
+<!--<progress value="0" max="100" id="progress" style="height: 20px; width: 100%"></progress>-->
+<!--<br/>-->
+<!--&lt;!&ndash;div模拟进度条&ndash;&gt;-->
+<!--<div id="progressNumber" style="width: 0%; height: 20px; background-color: Red"></div>-->
+<!--<br/>-->
+<!--<div id="result"></div>-->
+<form id="upload-form" action="upload.php" method="post" enctype="multipart/form-data" >
+    　　　　<input type="file" id="upload" name="upload" multiple="multiple" /> <br />
+    　　　　<input type="button" id="submit" value="Upload" />
+    　　</form>
+　<progress id="uploadprogress" min="0" max="100" value="0">0</progress>
+</body>
+</html>
+<script type="text/ecmascript">
+
+    var Person = (function(window) {
+        var Person = function(name) {
+            return new Person.fn.init(name);
+        }
+
+        Person.fn = Person.prototype = {
+            constructor: Person,
+            init: function(name) {
+                this.name = name;
+                this.sayHello = function() {
+                    this.makeArray();
+                }
+            },
+            makeArray: function() {
+                console.log(this.name);
+            }
+        }
+
+        Person.fn.init.prototype = Person.fn;
+
+        return Person;
+    })();
+
+
+
+    var p = Person('pawn');
+    p.makeArray();
+
+</script>
